@@ -1,0 +1,11 @@
+{  
+   "id":"1de4bc8c-bb54-4b12-8a2a-ccbbd1f417a3",
+   "couponTitle":"Example title",
+   "couponDescription":"Some description",
+   "value":10.0,
+   "creditType":1,
+   "author":"exampleUserName",
+   "validTill":1505001600000,
+   "createdDate":1505001600000,
+   "updatedDate":1505001600000
+} 
