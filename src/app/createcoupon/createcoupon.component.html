@@ -1,0 +1,26 @@
+<h2>Create Coupon</h2>
+<form [formGroup]="createForm" (ngSubmit)="onsubmitCreateForm()" novalidate >
+<label class="center-block">Title:
+  <input class="form-control" formControlName="couponTitle">
+</label>
+
+<label class="center-block">Description:
+  <input class="form-control" formControlName="couponDescription">
+</label>
+<label class="center-block">Value:
+  <input class="form-control" formControlName="value">
+</label>
+<label class="center-block">Author:
+  <input class="form-control" formControlName="author">
+</label>
+<label class="center-block">Valid Till:
+  <input class="form-control" formControlName="validTill">
+</label>
+  <div style="margin-bottom: 1em">
+    <button type="submit"
+            [disabled]="createForm.pristine" class="btn btn-success">Save</button> &nbsp;
+    <button type="reset" (click)="revert()"
+            [disabled]="createForm.pristine" class="btn btn-danger">Revert</button>
+  </div>
+
+</form>

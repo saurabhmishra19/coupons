@@ -16,7 +16,7 @@ export class HttpRequestService{
 
     defaultHeaders():HttpHeaders{
 
-        return new HttpHeaders().append('responseType','application/json');
+        return new HttpHeaders().append('responseType','application/json').append('Content-Type','application/json');
     }
 
     postContentDefault(url:string, body:string):Observable<any>{

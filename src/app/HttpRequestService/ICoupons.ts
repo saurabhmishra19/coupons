@@ -3,10 +3,10 @@ export interface ICoupons{
 id : string,
 couponTitle: string,
 couponDescription: string,
-value:number,
-creditType:number,
+value:string,
+creditType:string,
 author:string,
-validTill:number,
+validTill:string,
 createdDate:string,
 updatedDate:string
 

@@ -14,17 +14,10 @@ export class BodyComponent implements OnInit{
     }
 
     val():void{
-
-
         console.log( "this is the caller"+this._couponService.getCoupons());
     }
-
-    
-
     ngOnInit():void{
         console.log('calling on init');
-
-          //  this.val();
             this._loginService.loginService('saurabh','password');
 
     }

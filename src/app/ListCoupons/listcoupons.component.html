@@ -1,0 +1,29 @@
+
+
+<table class="table table-bordered" *ngIf='coupons.length>0'>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>ID</th>
+            <th>Description</th>
+            <th>Author</th>
+            <th>validTill</th>
+            <th>createdDate</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tr *ngFor="let name of coupons">
+        <td>{{name.couponTitle}}</td>
+          
+        <td>{{name.id}}</td>
+        <td>{{name.couponDescription}}</td>
+
+          <td>{{name.author}}</td>
+        <td>{{name.validTill}}</td>
+        <td>{{name.createdDate}}</td>
+        <td><button type="button" (click)="delete(name.id)"
+            class="btn btn-danger">Delete</button></td>
+    </tr>    
+
+
+    <tbody>
