@@ -3,7 +3,7 @@ import {ICoupons} from './ICoupons';
 import{HttpRequestService} from './HttpRequest.service';
 import {Injectable} from '@angular/core';
 import 'rxjs/Rx';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import { Coupon } from "./CouponModel";
 import {Http, Response, Headers, RequestOptions} from '@angular/http';
 @Injectable()
@@ -17,17 +17,25 @@ constructor(private _httpRequestService:HttpRequestService,private http: Http)
 }
 
 getCouponsOld (): Observable<Coupon[]> {
-    return this.http.get('http://10.71.12.144:8081/coupon/all')
-                      .map(res => res.json());
+    return this.getCoupons();
+    
+    //this.http.get('http://10.71.12.144:8081/coupon/all')
+      //                .map(res => res.json());
       }
 
 
-getCoupons():void{
+getCoupons():Observable<Coupon[]>{
 let url='http://10.71.12.144:8081/coupon/all'
- this._httpRequestService.getmethod(url).subscribe(
-    data=>{console.log("data in"+data);this.icouponList=data
-    console.log('getcoupons'+this.icouponList.length)
+let values : Observable<Coupon[]>;
+ values=this._httpRequestService.getmethod(url);
+ values.map(val=>(console.log('new caller of the values '+val)));
+ values.map(val=>console.log('mapping val: '+val.forEach(t=>console.log('id of th '+t.id))))
+ .subscribe(
+    data=>{
+    console.log('getcoupons--'+data)
     });
+return values;
+
 }
 
 saveCoupon(coupon :ICoupons):ICoupons{
@@ -42,6 +50,11 @@ saveCoupon(coupon :ICoupons):ICoupons{
 
 
 
+}
+
+deleteCoupon(id:string):void{
+ let url = 'http://10.71.12.144:8081/coupon/'+id;
+  this._httpRequestService.deleteMethod(url);
 }
 
 

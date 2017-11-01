@@ -1,0 +1,15 @@
+<form (ngSubmit)='save()' [formGroup]='testForm' novalidate >
+Name: <input formControlName='name' />
+<span class='help-block' 
+    *ngIf="(testForm.get('name').touched && !testForm.get('name').valid)">
+
+
+Required name
+</span>
+Indian:<input type="checkbox" formControlName='indian' (change)="changeCounty(indian.value)"/>
+
+<input type="submit" [disabled]="!testForm.valid" click='test()' name="submmit"/>
+
+Value: {{indian}}
+<input type="button" click='testvalues()' name='Test Data'/>
+</form>

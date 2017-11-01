@@ -15,8 +15,8 @@ export class CreateCoupon{
     }
     createcouponForm():void{
         this.createForm= this.fb.group({
-           couponTitle: ['', Validators.required ],
-           couponDescription:['', Validators.required ],
+           couponTitle: ['', Validators.required , Validators.minLength(3), Validators.maxLength(15)],
+           couponDescription:['', Validators.required , Validators.minLength(4), Validators.maxLength(200)],
            value: '',
             creditType: '',
             author: '',
@@ -31,10 +31,12 @@ export class CreateCoupon{
 
         const formModel = this.createForm.value;
 
-            console.log('values submitted'+JSON.stringify(formModel));
+     console.log('values submitted'+JSON.stringify(formModel));
 
        let res= this._couponService.saveCoupon(formModel);
        console.log('values response'+JSON.stringify(this._couponService.icoupon));
+   
+   
     }
 
     revert() { this.ngOnChanges(); }

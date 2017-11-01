@@ -5,10 +5,37 @@
   <title>Coupons</title>
   <base href="/">
 <link rel="stylesheet" href="https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/ngx-bootstrap/datepicker/bs-datepicker.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+<style>
+  #circle{
+    width: 20px;
+    height:20px;
+    border-radius: 50%;
+    background-color: red;
+    position: absolute;
+
+  }
+
+  </style>
+<script>
+
+// When the user clicks on <div>, open the popup
+function myFunction() {
+    var popup = document.getElementById("myPopup");
+    popup.classList.toggle("show");
+}
+
+    </script>
+
 </head>
 <body>
   <app-root></app-root>
+
+
+
+
 </body>
 </html>

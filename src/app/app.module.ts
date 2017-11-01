@@ -15,12 +15,17 @@ import {CreateCoupon} from './createcoupon/createcoupon.component';
 import {ListAllCoupons} from './ListCoupons/listcoupons.component';
 import {Coupon} from './HttpRequestService/CouponModel';
 import { HttpModule } from '@angular/http';
+import {TestForm} from './TestForm/TestForm.component';
+import {PopupComponent} from './ListCoupons/popup.component';
+
+import { BsDatepickerModule } from 'ngx-bootstrap';
+import {DemoDatePickerPopupComponent} from './createcoupon/DemoDatePickerPopupComponent'
 @NgModule({
   declarations: [
-    AppComponent, HeaderComponent, FooterComponent, BodyComponent, FormControlComponent, CreateCoupon, ListAllCoupons
+    AppComponent, HeaderComponent, FooterComponent, BodyComponent, FormControlComponent, CreateCoupon, ListAllCoupons,TestForm,DemoDatePickerPopupComponent,PopupComponent
   ],
   imports: [
-    BrowserModule,HttpClientModule, ReactiveFormsModule,HttpModule
+    BrowserModule,HttpClientModule, ReactiveFormsModule,HttpModule,BsDatepickerModule
   ],
   providers: [HttpRequestService, CouponService, LoginService],
   bootstrap: [AppComponent]

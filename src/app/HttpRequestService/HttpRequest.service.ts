@@ -27,7 +27,10 @@ export class HttpRequestService{
         return this._http.post(url, body,{headers:headers} )
         .do(resHttpResponse=>{console.log('response '+resHttpResponse)}).catch(error=>this.handleError(error));
     }
+    deleteMethod(url:string):void{
+        this._http.delete(url,{headers:this.defaultHeaders()}).subscribe;
 
+    }
 
     post(url:string,body:string ) :Observable<any>{
 

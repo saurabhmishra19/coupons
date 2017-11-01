@@ -1,26 +1,80 @@
-<h2>Create Coupon</h2>
+
 <form [formGroup]="createForm" (ngSubmit)="onsubmitCreateForm()" novalidate >
-<label class="center-block">Title:
-  <input class="form-control" formControlName="couponTitle">
-</label>
+
+<div class="form-group">
+<div class="panel-group col-sm-12">
+  <div class="panel panel-default">
+  <div class="panel-body"><h3>Create Coupon</h3></div>
+  </div>
+<div class="panel panel-default" style="margin: 0.3em">
+<div class="row">
+<div class="col-sm-4" style="text-align: right">
+ <label for="Title">Title:</label>
+</div>
+<div class="col-sm-3" style="text-align: left"> 
+ 
+  <input formControlName="couponTitle" class="form-control" id="Title" placeholder="Title"
+   [ngClass]="{'has-error':!createForm.get('couponTitle').valid}">
+    <span class="glyphicon glyphicon-remove form-control-feedback">
+{{createForm.get('couponTitle').valid}}
+
+
+    </span>
+</div>
+
+</div>
+<div class="row">
+<div class="col-sm-4" style="text-align: right">
+
 
 <label class="center-block">Description:
-  <input class="form-control" formControlName="couponDescription">
 </label>
-<label class="center-block">Value:
-  <input class="form-control" formControlName="value">
-</label>
-<label class="center-block">Author:
-  <input class="form-control" formControlName="author">
-</label>
-<label class="center-block">Valid Till:
-  <input class="form-control" formControlName="validTill">
-</label>
-  <div style="margin-bottom: 1em">
+</div>
+<div class="col-sm-3" style="text-align: left">
+<input class="form-control" formControlName="couponDescription" placeholder="Description">
+</div>
+</div>
+
+
+<div class="row">
+<div class="col-sm-4" style="text-align: right">
+<label class="center-block">Value:</label>
+</div>
+<div class="col-sm-3" style="text-align: left">
+  <input class="form-control" formControlName="value" placeholder="Value">
+</div>
+</div>
+
+<div class="row">
+<div class="col-sm-4" style="text-align: right">
+<label class="center-block">Author:</label>
+</div>
+<div class="col-sm-3" style="text-align: left">
+  <input class="form-control" formControlName="author" placeholder="Author">
+</div>
+</div>
+
+<div class="row">
+<div class="col-sm-4" style="text-align: right">
+<label class="center-block">Validity:</label>
+</div>
+<div class="col-sm-3" style="text-align: left">
+  <input class="form-control" formControlName="validTill" placeholder="Validity">
+<demo-date-picker-popup></demo-date-picker-popup>
+
+</div>
+</div>
+<div class="row" style="text-align: right">
+<div class="col-sm-7" >
+  <div style="margin: 0.3em">
     <button type="submit"
             [disabled]="createForm.pristine" class="btn btn-success">Save</button> &nbsp;
     <button type="reset" (click)="revert()"
             [disabled]="createForm.pristine" class="btn btn-danger">Revert</button>
   </div>
-
+</div>
+</div>
+</div>
+</div>
+</div>
 </form>

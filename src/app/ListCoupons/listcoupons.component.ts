@@ -41,7 +41,7 @@ this._couponService.getCouponsOld ()
 delete(id:string){
 
 console.log(id);
-
+this._couponService.deleteCoupon(id);
 }
 
 }

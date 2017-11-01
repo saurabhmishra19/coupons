@@ -1,3 +1,30 @@
+<!--
+
+<div class="div-title" *ngIf='coupons.length>0'>
+  <div class="col-sm-1">Title</div>
+  <div class="col-sm-2">ID</div>
+
+  <div class="col-sm-2">Description</div>
+  <div class="col-sm-2">Author</div>
+  <div class="col-sm-2">validTill</div>
+  <div class="col-sm-2">createdDate</div>
+  <div class="col-sm-1">Delete</div>
+</div>
+
+
+
+<div class="row" *ngFor="let name of coupons">
+  <div class="col-sm-1">{{name.couponTitle}}</div>
+  <div class="col-sm-2">{{name.id}}</div>
+
+  <div class="col-sm-2">{{name.couponDescription}}</div>
+  <div class="col-sm-2">{{name.author}}</div>
+  <div class="col-sm-2">{{name.validTill}}</div>
+  <div class="col-sm-2">{{name.createdDate}}</div>
+  <div class="col-sm-1"><button type="button" (click)="delete(name.id)"
+            class="btn btn-danger">Delete</button></div>
+</div>
+-->
 
 
 <table class="table table-bordered" *ngIf='coupons.length>0'>
@@ -7,8 +34,8 @@
             <th>ID</th>
             <th>Description</th>
             <th>Author</th>
-            <th>validTill</th>
-            <th>createdDate</th>
+            <th>Valid Till</th>
+            <th>Created On</th>
             <th>Delete</th>
         </tr>
     </thead>
@@ -21,8 +48,10 @@
           <td>{{name.author}}</td>
         <td>{{name.validTill}}</td>
         <td>{{name.createdDate}}</td>
-        <td><button type="button" (click)="delete(name.id)"
-            class="btn btn-danger">Delete</button></td>
+        <td>
+        <popup></popup>
+        
+        </td>
     </tr>    
 
 
